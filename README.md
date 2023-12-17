@@ -1,5 +1,5 @@
 # toxic-comments-classifier
-This project focuses on developing and evaluating machine learning models for detecting toxic comments in online discussions.
+This project focuses on developing and evaluating deep machine learning models for detecting toxic comments in online discussions.
 
 Here's a brief summary of what the code does:
 
