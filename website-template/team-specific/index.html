@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Toxic Comment Classifier</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="../home.html">Practical Machine Deep Learning</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="../home.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Toxic Comments Classifier</h1>
+        <ul class="list-unstyled">
+          <li>Sherif Wessa</li>
+          <li>Mohamed Hashish</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Problem Statement</h2>
+		<p>
+			Toxic comments encompass a wide range of harmful content, including abusive language, insults, and offensive remarks meant to harass or threaten others. This issue has led to the discouragement of many individuals from openly sharing their ideas and opinions due to concerns about receiving hate comments, which, in turn, negatively impacts their mental and emotional well-being. The primary issue we confront is the effective classification and detection of toxic comments on social media and online platforms.
+		</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Dataset</h2>
+
+        <p>
+			
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/Dataset.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Input/Output Examples</h2>
+
+        <p>
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/IO_image.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">State of the art</h2>
+
+        <p>
+			
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/SOTA.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Orignial Model from Literature</h2>
+
+        <p>
+          <br> Three different models using TensorFlow to address the challenge: </br>
+
+          <br>- MODEL I: a baseline approach that utilized a Bidirectional Long Short-Term Memory (LSTM) network with embeddings trained from scratch.</br>
+          <br>- MODEL II: a variation of the baseline approach that incorporated Glove's pre-trained embeddings with the Bidirectional LSTM architecture.</br>
+          <br>- MODEL III: the well-known BERT model, which is capable of producing state-of-the-art results on a range of NLP tasks including text classification.</br>
+          <br> Baseline Model Results: </br>
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/original_model_results.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Proposed Updates</h2>
+
+        <p>
+		</p>
+
+		<h5 class="mt-5">Update #1: Trying different Architectures</h5>
+		<p>
+			The original baseline model used a Bidirectional LSTM model with GloVe word embeddings. The first proposed update included an GRU model combined with a CNN model without GloVe word embeddings, and then we introduced a new update which is combining an LSTM model with a CNN model which turned out to be of better accuracy and results.
+		</p>
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/proposed_updates.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+
+		<h5 class="mt-5">Update #2: Updating Hyperparameters</h5>
+		<p>
+      In the baseline model, the hyperparameters were changed frequently to see how this would change the f1 score. Also, when we introduced new architectures such as: CNN, GRU, CNN-LSTM, AND CNN-GRU, we changed the hyperparameters to see how this would affect the f1 score. The hyperparameters that were changed are: the number of epochs, the batch size, the learning rate, and the optimizer. The best result achieved the LSTM model with Epoch = 10, learning rate = 0.001, optimizer = Adam, and average of F1 Score= micro.
+		</p>
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      	<!-- <img src="resources/images/update2.png" class="img-fluid text-center"> -->
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Results</h2>
+
+        <p>
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/CNN Model 2.png" class="img-fluid text-center">
+          <img src="resources/images/Test_result.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Technical report</h2>
+
+        <p>
+			Here you will detail the details related to training, for example:
+		</p>
+
+	 	<ul>
+		  <li>Programming framework: Python, TensorFlow, Keras, and nltk. </li>
+		  <li>Training hardware: Local (<b>Processor:</b> Intel® Core™ i9-10900F CPU @ 2.80GHz x 20, <b>Graphics: </b>NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER] / NVIDIA Corporation TU104 [GeForce RTX 2080 SUPER]).</li>
+		  <li>Training time: minimum of 15 minutes execpt BERT Model whose minimum time is 2 hours.</li>
+		  <li>Number of epochs: varies from 5 to 10.</li>
+		  <li>Time per epoch: minimum of 4:30 minutes while Bert takes 36 minutes/epoch.</li>
+		  <li>BERT model requires high computational power</li>
+		</ul> 
+      </div>
+    </div>
+
+	<div class="row">
+	  <div class="col-lg-12 text-left">
+	    <h2 class="mt-5">Conclusion</h2>
+
+	    <p>
+			After trying different architectures and hyperparameters, we found out that the hyperparameters that were used in the original baseline model weren't the best 
+      for our problem statement. Upon changing the hyperparameters, we found out that the highest validation accuracy was acheived by the LSTM (0.96), and the second highest validation accuracy was the CNN model that we introduced (0.94). What we learned from these experiments is that 
+      it was our first time to combine different architectures together, and we also learned how to use virtual environments to run our code on the GPU. For future work, we would like to try different architectures and hyperparameters to see if we can get a better validation accuracy, and we want to have a chance to change the hyperparameters of the BERT model since we were limited by time as it required half an hour for running a single epoch.
+		</p>
+
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-lg-12 text-left">
+	    <h2 class="mt-5">References</h2>
+
+	    <p>
+	    </p>
+
+		<ol>
+		  <li><a href="https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/data">Dataset URL</a></li>
+		  <li><a href="https://github.com/alessiococchieri/toxic-comment-classification/tree/main">Original Baseline Model URL</a></li>
+      <li><a href="https://aclanthology.org/2021.germeval-1.16.pdf">The State of the art model url</a></li>
+      <li><a href="https://paperswithcode.com/paper/convolutional-neural-networks-for-toxic">Initial model url</a></li>
+      
+
+		</ol> 
+	  </div>
+	</div>
+
+  </div>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.slim.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

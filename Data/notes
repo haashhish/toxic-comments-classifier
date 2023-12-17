@@ -1,0 +1,34 @@
+in F1 score, as epoch increase, score increases
+CNN Model 1: lr=0.01	val_f1_score: 0.8400
+CNN Model 2: lr=0.01	val_f1_score: 0.9400
+CNN Model 3: lr=0.01	val_f1_score: 0.9063
+CNN Model 4: lr = 0.1	val_f1_score: 0.8300
+
+
+GRU Model 1: lr=0.01	val_f1_score: 0.7561
+GRU Model 2: lr=0.01	val_f1_score: 0.0000e+00
+GRU Model 3: lr=0.01	val_f1_score: 0.4414
+GRU Model 4: lr=0.1	val_f1_score: 0.0741
+
+LSTM Baseline Model: lr=0.001	val_f1_score: 0.7717
+LSTM Model 1: lr=0.001	val_f1_score: 0.7751
+LSTM Model 2: lr=0.01	val_f1_score: 0.5387
+LSTM Model 3: lr=0.001	val_f1_score: 0.8941 (epoch = 5, f1 score = micro)
+LSTM Model 4: lr=0.001	val_f1_score: 0.9589 (epoch = 10, f1 score = micro)
+LSTM Model 5: lr=0.001	val_f1_score: 0.0716
+
+LSTM-CNN Model 1: lr=0.01	val_f1_score: 0.3831
+LSTM-CNN Model 2: lr=0.01	val_f1_score: 0.6938
+LSTM-CNN Model 3: lr=0.001	val_f1_score: 0.8926
+LSTM-CNN Model 4: lr=0.001	val_f1_score: 0.6085
+LSTM-CNN Model 5: lr=0.001	val_f1_score: 0.7194
+
+GRU-CNN Model 1: lr=0.001	val_f1_score: 0.6423
+GRU-CNN Model 2: lr=0.01	val_f1_score: 0.3546
+GRU-CNN Model 3: lr=0.001	val_f1_score: 0.6136
+
+BERT Baseline model: lr=3e-5	val_f1_score: 0.8521
+
+'micro': Calculate the F1 score globally by counting the total true positives, false negatives, and false positives across all classes. Then, compute the precision, recall, and F1 score using these global counts.
+
+'macro': Calculate the F1 score for each class independently and then take the unweighted average (equally weighted) across all classes. This gives each class the same importance, regardless of its size.
